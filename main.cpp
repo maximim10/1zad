@@ -5,7 +5,7 @@
 #include <vector>
 #include <list>
 #include <map>
-#include <algorithim>
+#include <algorithm>
 #include "Vector.hpp"
 //#include "Vector.cpp"
 #include "VectorHori.hpp"
