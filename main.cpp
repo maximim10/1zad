@@ -2,7 +2,6 @@
 #include <iostream>
 #include <fstream>
 #include <sstream>
-#include <memory>
 #include <vector>
 #include <list>
 #include <map>
