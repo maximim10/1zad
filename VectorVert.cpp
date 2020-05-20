@@ -9,7 +9,7 @@ namespace VECTOR_HORI_VERT {
     }
     fil << this-> znak << '*';
     for (unsigned int i = 0; i < this->L; i++) {
-      fil << this->vector_[i] << '\n';
+      fil << this->vector_[i] << "\n  ";
     }
     fil << std::endl;
     fil.close();

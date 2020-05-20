@@ -1,5 +1,6 @@
 #pragma once
 #include <cmath>
+#include <algorithm>
 #include <iostream>
 #include <fstream>
 #include <sstream>
@@ -24,4 +25,6 @@ protected:
     VectorHori(const VectorHori& other);
     ~VectorHori();
   };
+  VectorHori operator+(Vector& first, Vector& other);
+  VectorHori operator-(Vector& first, Vector& other);
 }

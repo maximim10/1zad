@@ -1,6 +1,7 @@
 #pragma once
 #include <cmath>
 #include <iostream>
+#include <algorithm>
 #include <fstream>
 #include <sstream>
 #include <memory>

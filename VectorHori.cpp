@@ -15,7 +15,6 @@ namespace VECTOR_HORI_VERT {
 
     fil.close();
   }
-    VectorHori operator+(Vector& first, Vector& other);
   VectorHori operator-(Vector& first, Vector& other) {
     Vector* temp = new VectorHori(first.filename_, 1);
     temp->L=std::max(first.L,other.L);
@@ -34,10 +33,13 @@ namespace VECTOR_HORI_VERT {
                     temp->znak=-first.znak;
                     break;
                 }
+                if (first.vector_[i] > other.vector_[i]){
+                    temp->znak=first.znak;
+                    break;
+                }
             }
         }
         for (int i=std::max(first.L,other.L)-1; i>=0; i--) {
-
                 temp->vector_[i] = ((temp->znak==first.znak ? first.vector_[i] : other.vector_[i]) -
                                 (temp->znak==first.znak ? (i-mm>=0 ? other.vector_[i-mm] : 0) : (i-mm>=0 ? first.vector_[i-mm] : 0)));
 
@@ -59,7 +61,7 @@ namespace VECTOR_HORI_VERT {
                 j+=1;
             }
         }
-        if (j>0){
+        if ( (j>0) && (j!=temp->L) ){
             int* vtemp;
             vtemp=new int[temp->L-j];
             for (int i=0;i<temp->L-j;i++){
@@ -68,6 +70,14 @@ namespace VECTOR_HORI_VERT {
             delete [] temp->vector_;
             temp->vector_=vtemp;
             temp->L=temp->L-j;
+        }
+        if ( (j>0) && (j==temp->L) ){
+            int* vtemp;
+            vtemp=new int[1];
+            vtemp[0]=0;
+            delete [] temp->vector_;
+            temp->vector_=vtemp;
+            temp->L=1;
         }
         return (*temp);
     }else{
